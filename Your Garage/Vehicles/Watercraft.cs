@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace Your_Garage.Vehicles
 {
-    class Watercraft
+    class Watercraft : Vehicle
     {
-        public string Make { get; set; }
-        public string Model { get; set; }
-
         public double Horsepower { get; set; }
         public double FuelCapacity { get; set; }
-        public int Seats { get; set; }
-        public VehicleColor Color { get; set; }
 
         double _fuelOnBoard;
 
@@ -29,7 +24,7 @@ namespace Your_Garage.Vehicles
             _fuelOnBoard = 0;
         }
 
-        public bool ReFuel(double gallons)
+        public override bool ReFuel(double gallons)
         {
             bool returnVal = false;
             if (gallons <= FuelCapacity && gallons > 0)

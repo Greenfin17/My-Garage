@@ -7,14 +7,9 @@ using Your_Garage;
 
 namespace Your_Garage.Vehicles
 {
-    class Aircraft
+    class Aircraft : Vehicle
     {
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public VehicleColor Color { get; set; }
         public double FuelCapacity { get; set; }
-        public int Seats { get; private set; }
-
 
         double _fuelOnBoard;
         bool _isFlying;
@@ -31,7 +26,7 @@ namespace Your_Garage.Vehicles
             _fuelOnBoard = 0;
         }
 
-        public bool ReFuel(double liters)
+        public override bool ReFuel(double liters)
         {
             bool returnVal = false;
             if (liters <= FuelCapacity && liters > 0)
