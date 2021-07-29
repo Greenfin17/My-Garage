@@ -61,24 +61,24 @@ namespace Your_Garage.Vehicles
         {
             if (IsElectric && (_kwhMile > 0 && _costKWH > 0)) 
             {
-                Console.WriteLine($"               Attempting to drive the {Make} {miles} miles.\n");
+                Console.WriteLine($"               Attempting to drive the {Make} {miles} miles.");
                 if (_percentCharge > 10 && miles < _percentCharge / 100 * _range)
                 {
-                    Console.WriteLine($"               Driving the {Make} {miles} miles.\n");
+                    Console.WriteLine($"               Driving the {Make} {miles} miles.");
                     Mileage += miles;
                     _operationCost += miles * _kwhMile * _costKWH;
                 } else if (miles > _range)
                 {
-                    Console.WriteLine($"Miles exceeds vehicle range. Charge your car.");
+                    Console.WriteLine($"               Miles exceeds vehicle range. Charge your car.");
                 } else
                 {
-                    Console.WriteLine($"You need to charge the vehicle for this trip");
+                    Console.WriteLine($"               You need to charge the vehicle for this trip");
                 }
             
             }
             else
             {
-                Console.WriteLine("Enter the mpg for this vehicle as the second parameter.");
+                Console.WriteLine("               Enter the mpg for this vehicle as the second parameter.");
             }
         }
         // ICE version of Drive, enter the cost / gallon
@@ -86,12 +86,12 @@ namespace Your_Garage.Vehicles
         {
             if (!IsElectric)
             {
-                Console.WriteLine($"               Driving the {Make} {miles} miles.\n");
+                Console.WriteLine($"               Driving the {Make} {miles} miles.");
                 Mileage += miles;
                 _operationCost += (miles / Mpg) * costPerGallon;
             } else
             {
-                Console.WriteLine("Enter the miles driven only for this vehicle");
+                Console.WriteLine("               Enter the miles driven only for this vehicle");
             }
         }
         public void Repair(double cost)
@@ -117,7 +117,7 @@ namespace Your_Garage.Vehicles
                 if (amount > 0 && amount <= FuelCapacity)
                 {
                     _fuelOnBoard += amount;
-                    Console.WriteLine($"               Adding {amount} gallons of fuel");
+                    Console.WriteLine($"               Adding {amount} gallons of fuel to the {Make}");
                     returnVal = true;
                 }
             }

@@ -38,7 +38,7 @@ namespace Your_Garage.Vehicles
 
             else
             {
-                Console.WriteLine($"Invalid number of liters.");
+                Console.WriteLine($"               Invalid number of liters.");
             }
             return returnVal;
         }
@@ -52,17 +52,17 @@ namespace Your_Garage.Vehicles
                 double fuelNeeded = miles / 12.3;
                 if (_fuelOnBoard < fuelNeeded)
                 {
-                    Console.WriteLine("You need to add more fuel before starting this flight");
+                    Console.WriteLine("               You need to add more fuel before starting this flight");
                 }
                 else
                 {
-                    Console.WriteLine($"The {Make} {Model} is flying {miles} miles.");
+                    Console.WriteLine($"               The {Make} {Model} is flying {miles} miles.");
                     _isFlying = true;
                     returnVal = true;
                 }
             } else
             {
-                Console.Write($"Invalid number of passengers. Maximum capacity is {Seats}.");
+                Console.Write($"               Invalid number of passengers. Maximum capacity is {Seats}.");
             }
             return returnVal;
         }
@@ -78,7 +78,7 @@ namespace Your_Garage.Vehicles
             {
                 if (message == true)
                 {
-                    Console.Write("You must be flying before you can land");
+                    Console.Write("               You must be flying before you can land");
                 }
                 returnVal = false;
             }

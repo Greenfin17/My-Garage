@@ -29,6 +29,11 @@ namespace Your_Garage
                 aircraft.Fly(random.Next(10, 250), 2);
             }
 
+            if (aircraftList.Count > 0)
+            {
+                Console.Write('\n');
+            }
+
         }
 
         static void runCars(){
@@ -41,6 +46,10 @@ namespace Your_Garage
             focus.ReFuel(88);
             focus.SetElectricCost(.31, .11);
             carList.Add(focus);
+            if (carList.Count > 0)
+            {
+                Console.Write('\n');
+            }
 
             Random random = new Random();
 
@@ -54,6 +63,10 @@ namespace Your_Garage
                 {
                     carItem.Drive(random.Next(10, 200), 3.56);
                 }
+            }
+            if (carList.Count > 0)
+            {
+                Console.Write('\n');
             }
         }
         static void Main(string[] args)
