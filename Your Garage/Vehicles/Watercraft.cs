@@ -13,10 +13,11 @@ namespace Your_Garage.Vehicles
 
         double _fuelOnBoard;
 
-        public Watercraft(string make, string model, double fuelCapacity, double horsepower, int seats, VehicleColor color)
+        public Watercraft(string make, string model, string year, double fuelCapacity, double horsepower, int seats, VehicleColor color)
         {
             Make = make;
             Model = model;
+            Year = year;
             FuelCapacity = fuelCapacity;
             Horsepower = horsepower;
             Seats = seats;

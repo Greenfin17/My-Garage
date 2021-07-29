@@ -15,10 +15,11 @@ namespace Your_Garage.Vehicles
         bool _isFlying;
         int _passengers;
 
-        public Aircraft(string make, string model, VehicleColor color,  double fuelCapacity, int seats)
+        public Aircraft(string make, string model, string year, VehicleColor color,  double fuelCapacity, int seats)
         {
             Make = make;
             Model = model;
+            Year = year;
             Color = color;
             FuelCapacity = fuelCapacity;
             Seats = seats;
@@ -26,12 +27,12 @@ namespace Your_Garage.Vehicles
             _fuelOnBoard = 0;
         }
 
-        public override bool ReFuel(double liters)
+        public override bool ReFuel(double gallons)
         {
             bool returnVal = false;
-            if (liters <= FuelCapacity && liters > 0)
+            if (gallons <= FuelCapacity && gallons > 0)
             {
-                _fuelOnBoard = liters;
+                _fuelOnBoard = gallons;
                 returnVal = true;
             }
 
@@ -42,20 +43,20 @@ namespace Your_Garage.Vehicles
             return returnVal;
         }
 
-        public bool Fly(float kilometers, int passengers)
+        public bool Fly(float miles, int passengers)
         {
             bool returnVal = false;
             if (passengers > 0 && passengers <= Seats)
             {
                 _passengers = passengers;
-                _fuelOnBoard -= 3.4 * kilometers / 100 * passengers;
-                if (_fuelOnBoard < 20)
+                double fuelNeeded = miles / 12.3;
+                if (_fuelOnBoard < fuelNeeded)
                 {
                     Console.WriteLine("You need to add more fuel before starting this flight");
                 }
                 else
                 {
-                    Console.WriteLine($"The {Make} {Model} is flying {kilometers} kilometers.");
+                    Console.WriteLine($"The {Make} {Model} is flying {miles} miles.");
                     _isFlying = true;
                     returnVal = true;
                 }
